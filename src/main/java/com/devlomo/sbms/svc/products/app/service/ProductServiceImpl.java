@@ -21,7 +21,7 @@ public class ProductServiceImpl implements IProductService{
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Product> findAll() throws Throwable {
+	public List<Product> findAll() throws Exception {
 		try {
 			log.info("finding all products");
 			return (List<Product>) productDao.findAll();
@@ -33,7 +33,7 @@ public class ProductServiceImpl implements IProductService{
 
 	@Override
 	@Transactional(readOnly = true)
-	public Product findById(Long Id) throws Throwable {
+	public Product findById(Long Id) throws Exception {
 		try {
 			if(Id != null) {
 				return productDao.findById(Id).orElse(null);

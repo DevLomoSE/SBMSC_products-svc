@@ -6,8 +6,8 @@ import com.devlomo.sbms.svc.products.app.model.entity.Product;
 
 public interface IProductService {
 	
-	public List<Product> findAll() throws Throwable;
+	public List<Product> findAll() throws Exception;
 	
-	public Product findById(Long Id) throws Throwable;
+	public Product findById(Long Id) throws Exception;
 
 }
