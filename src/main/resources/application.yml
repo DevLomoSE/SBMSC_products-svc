@@ -1,1 +1,16 @@
-
+spring:
+  application:
+    name: ms-products-svc
+  profiles:
+    active: default
+  datasource:
+    url: jdbc:mariadb://dbd.lomosrv.com:3306/sbms_products_ms
+    username: devlomo
+    password: P@lomo53
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    
+server:
+  port: 8001
