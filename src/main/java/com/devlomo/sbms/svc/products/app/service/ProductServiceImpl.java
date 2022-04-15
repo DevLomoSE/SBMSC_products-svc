@@ -36,6 +36,7 @@ public class ProductServiceImpl implements IProductService{
 	public Product findById(Long Id) throws Exception {
 		try {
 			if(Id != null) {
+				log.info("finding product by id: {}", Id);
 				return productDao.findById(Id).orElse(null);
 			}else {
 				return null;
