@@ -4,13 +4,20 @@ spring:
   profiles:
     active: default
   datasource:
-    url: jdbc:mariadb://dbd.lomosrv.com:3306/sbms_products_ms
+    url: jdbc:mariadb://dbd.lomosrv.com/sbms_products_ms
     username: devlomo
     password: P@lomo53
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     
 server:
-  port: 8001
+  port: ${PORT:0}
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://eurekasrv.dconcesionaria.lomosrv.com:8761/eureka
